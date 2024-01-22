@@ -30,10 +30,10 @@
 
     lower_layer {
       bindings = <
-        &trans    &kp KP_PLUS  &kp KP_N7     &kp KP_N8   &kp KP_N9   &kp KP_MINUS                         &kp LPAR    &kp AMPS    &kp EQUAL    &kp UNDER    &kp RPAR    &trans
-        &trans    &kp KP_DOT    &kp KP_N4     &kp KP_N5   &kp KP_N6   &kp KP_MULTIPLY                      &kp LBKT    &kp DLLR    &kp PRCNT    &kp CARET    &kp RBKT    &trans
-        &trans    &kp KP_N0   &kp KP_N1     &kp KP_N2   &kp KP_N3   &kp KP_DIVIDE    &kp CAPS            &kp LBRC    &kp EXCL    &kp AT_SIGN  &kp HASH     &kp RBRC    &trans
-                               &kp KP_NLCK   &mo 3       &trans      &trans                               &trans      &trans      &mo 3        &trans
+        &trans    &kp KP_DIVIDE &kp KP_N7     &kp KP_N8   &kp KP_N9  &kp KP_MULTIPLY               &kp LPAR    &kp AMPS    &kp EQUAL    &kp UNDER    &kp RPAR    &trans
+        &trans    &kp KP_DOT    &kp KP_N4     &kp KP_N5   &kp KP_N6  &kp KP_PLUS                   &kp LBKT    &kp DLLR    &kp PRCNT    &kp CARET    &kp RBKT    &trans
+        &trans    &kp KP_N0     &kp KP_N1     &kp KP_N2   &kp KP_N3  &kp KP_MINUS    &kp CAPS      &kp LBRC    &kp EXCL    &kp AT_SIGN  &kp HASH     &kp RBRC    &trans
+                                &kp KP_NLCK   &mo 3       &trans      &trans                       &trans      &trans      &mo 3        &trans
       >;
       sensor-bindings = <&inc_dec_kp UP DOWN>;
     };
