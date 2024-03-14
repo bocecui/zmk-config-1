@@ -14,6 +14,29 @@
 };
 
 / {
+  behaviors {
+        tdLeft: tdLeft {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&kp LEFT>;
+        };
+        };
+  behaviors {
+        tdRight: tdRight {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&kp RIGHT>;
+        };
+        };
+  behaviors {
+        lrEncoder: lrEncoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&tdLeft>, <&tdRight>;
+        };
+        };
   keymap {
     compatible = "zmk,keymap";
 
@@ -25,30 +48,8 @@
         &kp LSHFT        &lt 2 Z        &kp X       &kp C         &kp V     &kp B      &bootloader                  &kp N     &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT 
                                         &kp LALT    &kp LCTRL     &kp SPACE &mo 1                                   &kp BSPC  &mo 1     &mo 3      &kp RGUI
       >;
-    behaviors 
-        {
-        tdLEFT: tdLEFT {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&NONE>, <&kp LEFT>;
-        };
-    behaviors 
-        {
-        tdRIGHT: tdRIGHT {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&NONE>, <&kp RIGHT>;
-        };
-    behaviors {
-        lr_encoder: lr_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&tdLEFT>, <&tdRIGHT>;
-        };
     
-    sensor-bindings = <&lr_encoder>;
+    sensor-bindings = <&lrEncoder>;
     };
 
     lower_layer {
