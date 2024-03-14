@@ -25,7 +25,30 @@
         &kp LSHFT        &lt 2 Z        &kp X       &kp C         &kp V     &kp B      &bootloader                  &kp N     &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT 
                                         &kp LALT    &kp LCTRL     &kp SPACE &mo 1                                   &kp BSPC  &mo 1     &mo 3      &kp RGUI
       >;
-      sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+    behaviors 
+        {
+        tdLEFT: tdLEFT {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&NONE>, <&kp LEFT>;
+        };
+    behaviors 
+        {
+        tdRIGHT: tdRIGHT {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&NONE>, <&kp RIGHT>;
+        };
+    behaviors {
+        lr_encoder: lr_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&tdLEFT>, <&tdRIGHT>;
+        };
+    
+    sensor-bindings = <&lr_encoder>;
     };
 
     lower_layer {
