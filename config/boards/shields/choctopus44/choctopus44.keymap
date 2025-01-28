@@ -43,10 +43,10 @@
 
     default_layer {
       bindings = <
-        &kp TAB     &kp Q          &kp W         &kp E         &kp R     &kp T                                   &kp Y     &kp U     &kp I      &kp O    &kp P     &mt RALT BSLH
-        &kp RET     &kp A          &kp S         &kp D         &kp F     &kp G                                   &kp H     &kp J     &kp K      &kp L    &kp SEMI  &mt RCTRL SQT
+        &kp TAB     &kp Q          &kp W         &kp E         &kp R     &kp T                                   &kp Y     &kp U     &kp I      &kp O    &kp P     &kp BSLH
+        &kp RET     &kp A          &kp S         &kp D         &kp F     &kp G                                   &kp H     &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
         &kp LSHFT   &lt 2 Z        &kp X         &kp C         &kp V     &kp B         &bootloader               &kp N     &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT 
-                                   &kp LALT      &kp LCTRL     &kp SPACE &mo 1                                   &kp BSPC  &kp RGUI  &mo 1      &mo 3      
+                                   &kp LALT      &kp LCTRL     &kp SPACE &mo 1                                   &kp BSPC  &kp RGUI  &kp RCTRL  &RALT      
       >;
     
     sensor-bindings = <&lrEncoder>;
@@ -54,7 +54,7 @@
 
     lower_layer {
       bindings = <
-        &kp ESC          &kp KP_PLUS        &kp KP_N7     &kp KP_N8   &kp KP_N9  &kp KP_MINUS                            &kp LPAR    &kp AMPS    &kp EQUAL    &kp UNDER    &kp RPAR    &trans
+        &kp ESC         &kp KP_PLUS        &kp KP_N7     &kp KP_N8   &kp KP_N9  &kp KP_MINUS                            &kp LPAR    &kp AMPS    &kp EQUAL    &kp UNDER    &kp RPAR    &trans
         &trans          &kp KP_N0          &kp KP_N4     &kp KP_N5   &kp KP_N6  &kp KP_DOT                              &kp LBKT    &kp DLLR    &kp PRCNT    &kp CARET    &kp RBKT    &trans
         &trans          &lt 3 KP_MULTIPLY  &kp KP_N1     &kp KP_N2   &kp KP_N3  &kp KP_DIVIDE        &kp KP_NLCK        &kp LBRC    &kp EXCL    &kp AT_SIGN  &kp HASH     &kp RBRC    &trans
                                           &trans     &trans       &trans      &trans                                     &trans       &trans     &trans       &trans
@@ -64,10 +64,10 @@
 
     raise_layer {
       bindings = <
-        &trans      &kp CAPS    &kp F7   &kp F8   &kp F9  &kp F10                                         &kp F22   &kp F19    &kp F20    &kp F21   &kp F22    &trans
-        &trans      &kp GRAVE  &kp F4   &kp F5   &kp F6   &kp F11                                         &kp F23   &kp F16    &kp F17    &kp F18   &kp F23    &trans
-        &trans      &trans     &kp F1   &kp F2   &kp F3   &kp F12           &kp KP_NLCK                   &kp F24   &kp F13    &kp F14    &kp F15   &kp F24    &trans
-                               &trans    &trans   &trans   &mo 3                                          &trans      &trans      &trans     &trans
+        &trans      &kp CAPS    &kp F7   &kp F8   &kp F9  &kp F10                                         &kp F22   &kp F19    &kp UP      &kp F21   &kp F22    &trans
+        &trans      &kp GRAVE  &kp F4   &kp F5   &kp F6   &kp F11                                         &kp F23   &kp LEFT   &kp DOWN    &kp RIGHT  &kp F23    &trans
+        &trans      &trans     &kp F1   &kp F2   &kp F3   &kp F12           &kp KP_NLCK                   &kp F24   &kp F13    &kp F14     &kp F15   &kp F24    &trans
+                               &trans    &trans   &trans   &mo 3                                          &trans    &trans      &trans     &trans
       >;
       sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
     };
