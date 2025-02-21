@@ -4,18 +4,3 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@a82a0ec4969487a0f15cd417b215360465d746d5
 
-  reupload-artifacts:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifacts (from ZMK build)
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifact
-          path: ./artifacts
-
-      - name: Re-upload artifacts using v4
-        uses: actions/upload-artifact@v4
-        with:
-          name: fixed-artifact
-          path: ./artifacts
